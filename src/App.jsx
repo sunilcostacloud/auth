@@ -4,6 +4,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
+import PageNotFound from './components/PageNotFoundApp';
 
 const theme = createTheme({
   // Add your theme configuration here
@@ -19,12 +20,13 @@ export default function App({ history, onSignIn }) {
         <CssBaseline />
         <Router history={history}>
           <Switch>
-            <Route path="/auth/signin">
+            <Route exact path="/auth/signin">
               <SignIn onSignIn={onSignIn} />
             </Route>
-            <Route path="/auth/signup">
+            <Route exact path="/auth/signup">
               <SignUp onSignIn={onSignIn} />
             </Route>
+            <Route component={PageNotFound} />
           </Switch>
         </Router>
       </ThemeProvider>
