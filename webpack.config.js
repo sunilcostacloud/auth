@@ -6,8 +6,8 @@ module.exports = (_, argv) => ({
   output: {
     publicPath:
       argv.mode === "development"
-        ? "http://localhost:8082"
-        : "http://auth-microfrontend.apps.ocp4.pacosta.com",
+        ? "http://localhost:8082/"
+        : "http://auth-microfrontend.apps.ocp4.pacosta.com/",
   },
 
   resolve: {
